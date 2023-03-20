@@ -12,5 +12,5 @@ def user_admins(first_name, last_name)
   user.password = "password"
   user.first_name = first_name
   user.last_name = last_name
-  user.description = "Hi! I'm #{first_name}, and I love Nerima! Exploring new areas and finding hidden spots, secret attractions, and little known hole in the walls is my hobby"
+  user.description = "Hi! I'm #{first_name}, and I love Nerima! Exploring new areas and finding hidden spots, secret attractions, and little known hole in the walls is my hobby."
 end
