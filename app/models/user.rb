@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_many :reviews
   has_many :bookmarks
   has_many :spots
+  validates :first_name, :last_name, presence: true
 end
