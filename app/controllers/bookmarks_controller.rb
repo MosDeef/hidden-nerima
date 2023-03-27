@@ -11,6 +11,8 @@ class BookmarksController < ApplicationController
     @bookmark.user = current_user
     @bookmark.spot = @spot
     authorize @bookmark
+    # TODO: decide what we want to to after saved bookmark
+    # maybe just keep you on the same page, but update screen element?
     @bookmark.save
   end
 
