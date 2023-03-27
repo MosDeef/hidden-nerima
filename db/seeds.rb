@@ -15,7 +15,8 @@ def user_admins(first_name, last_name)
   user.description = "Hi! I'm #{first_name}, and I love Nerima! Exploring new areas and finding hidden spots, secret attractions, and little known hole in the walls is my hobby."
   user.save
 end
+
 puts "generating admins..."
 user_admins("jackson", "socolofsky")
-user_admins("Luca", "Vigotti")
+user_admins("luca", "vigotti")
 user_admins("jim", "deef")
