@@ -18,7 +18,11 @@ class SpotsController < ApplicationController
     @spot = Spot.new(spot_params)
     @spot.user = current_user
     authorize @spot
-    @spot.save
+    if @spot.save
+      redirect_to spot_path(@spot)
+    else
+      render "new", status: :unprocessable_entity
+    end
   end
 
 
@@ -26,6 +30,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     authorize @spot
   end
+
   def update
     @spot = Spot.find(params[:id])
     authorize @spot
@@ -40,4 +45,5 @@ class SpotsController < ApplicationController
   def spot_params
     params.require(:spot).permit(:name, :location, :description, :category, :hours_open, :type,)
   end
+
 end
