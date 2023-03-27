@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap');
+
+.banner {
+  display: flex;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
+  background-color: #F7D4BC;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.banner-img img {
+  height: 225px;
+}
+
+.banner-header {
+  text-align: center;
+  width: 100%;
+}
+
+.banner h1 {
+  color: #63372C;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  font-size: 100px;
+  font-weight: bold;
+  font-family: 'Bona Nova';
+  padding-top: 5%;
+}
