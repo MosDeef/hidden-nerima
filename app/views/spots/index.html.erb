@@ -6,9 +6,23 @@
     <h1>Hidden Nerima</h1>
   </div>
 </div>
-<ul>
-  <li><%= link_to "Home", "#", class: "index-nav-link" %></li>
-  <li><%= link_to "Food", "#", class: "index-nav-link" %></li>
-  <li><%= link_to "Experiences", "#", class: "index-nav-link" %></li>
-  <li><%= link_to "My Page", "#", class: "index-nav-link" %></li>
-</ul>
+<div class="navbar-dropdown">
+  <ul>
+    <li><%= link_to "Home", "#", class: "index-nav-link" %></li>
+    <li class="dropdown"><%= link_to "Food", "#", class: "dropbtn" %>
+      <div class="dropdown-content foods">
+        <%= link_to "Japanese", "#"%>
+        <%= link_to "Western", "#"%>
+        <%= link_to "Korean", "#"%>
+      </div>
+    </li>
+    <li class="dropdown"><%= link_to "Experiences", "#", class: "dropbtn" %>
+      <div class="dropdown-content experiences">
+        <%= link_to "Shrines", "#"%>
+        <%= link_to "Parks", "#"%>
+        <%= link_to "Museums", "#"%>
+      </div>
+    </li>
+    <li><%= link_to "My Page", "#", class: "index-nav-link" %></li>
+  </ul>
+</div>
