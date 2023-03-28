@@ -9,14 +9,18 @@
 <div class="navbar-dropdown">
   <ul>
     <li><%= link_to "Home", "#", class: "index-nav-link" %></li>
-    <li class="dropdown"><%= link_to "Food", "#", class: "dropbtn" %>
+    <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
+        Foods <%= image_tag('arrow-drop-down-rounded.svg') %>
+      <% end %>
       <div class="dropdown-content foods">
         <%= link_to "Japanese", "#"%>
         <%= link_to "Western", "#"%>
         <%= link_to "Korean", "#"%>
       </div>
     </li>
-    <li class="dropdown"><%= link_to "Experiences", "#", class: "dropbtn" %>
+    <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
+        Experiences <%= image_tag('arrow-drop-down-rounded.svg') %>
+      <% end %>
       <div class="dropdown-content experiences">
         <%= link_to "Shrines", "#"%>
         <%= link_to "Parks", "#"%>

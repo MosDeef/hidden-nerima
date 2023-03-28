@@ -1,10 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
 ul {
   list-style-type: none;
   margin: 10px auto;
   padding: 0;
   background-color: #CEEDC7;
   width: 55%;
-  height: 60px;
+  height: 65px;
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.25);
 }
 
@@ -17,9 +22,9 @@ li a,
   display: inline-block;
   color: #285430;
   text-align: center;
-  padding: 5px 49px;
+  padding: 13px 49px;
   font-family: 'Bona Nova';
-  font-size: 33px;
+  font-size: 26px;
   text-decoration: none;
 }
 
@@ -43,7 +48,7 @@ li.dropdown {
 }
 
 .foods {
-  margin: 2px 0;
+  margin: 2px 12px;
 }
 
 .experiences {
