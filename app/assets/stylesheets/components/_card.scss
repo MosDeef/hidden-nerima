@@ -1,0 +1,70 @@
+.cards {
+  margin-top: 30px;
+}
+
+.cta-background {
+  background-size: cover;
+  background-position: center center;
+  bottom: 0;
+  filter: blur(50px);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.cta {
+  background: #333;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.2);
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+  width: 315px;
+
+
+  &:hover {
+
+    img {
+      top: -10%;
+      filter: brightness(70%);
+    }
+
+    .text {
+      bottom: 0;
+    }
+  }
+
+  img {
+    bottom: 0;
+    filter: brightness(100%);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: 0.5s ease-in-out;
+    width: 115%;
+    height: 110%;
+  }
+
+  .text {
+    bottom: -55%;
+    padding: 15px;
+    position: absolute;
+    transition: 0.5s ease-in-out;
+
+    h2 {
+      color: #fff;
+      display: inline-block;
+      font-weight: 300;
+      margin-bottom: 5px;
+      position: relative;
+    }
+
+    p {
+      color: #fff;
+      font-weight: 300;
+    }
+  }
+}
