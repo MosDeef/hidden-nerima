@@ -1,33 +1,50 @@
-<div class="banner">
-  <div class="banner-img">
-    <%= image_tag "reading-nerimaru.jpg"  %>
+<div class="container">
+  <div class="banner">
+    <div class="banner-img">
+      <%= image_tag "reading-nerimaru.jpg"  %>
+    </div>
+    <div class="banner-header">
+      <h1>Hidden Nerima</h1>
+    </div>
   </div>
-  <div class="banner-header">
-    <h1>Hidden Nerima</h1>
+  <div class="navbar-dropdown">
+    <ul>
+      <li><%= link_to "Home", "#", class: "index-nav-link" %></li>
+      <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
+          Foods <%= image_tag('arrow-drop-down-rounded.svg') %>
+        <% end %>
+        <div class="dropdown-content foods">
+          <%= link_to "Japanese", "#"%>
+          <%= link_to "Western", "#"%>
+          <%= link_to "Korean", "#"%>
+        </div>
+      </li>
+      <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
+          Experiences <%= image_tag('arrow-drop-down-rounded.svg') %>
+        <% end %>
+        <div class="dropdown-content experiences">
+          <%= link_to "Shrines", "#"%>
+          <%= link_to "Parks", "#"%>
+          <%= link_to "Museums", "#"%>
+        </div>
+      </li>
+      <li><%= link_to "My Page", "#", class: "index-nav-link" %></li>
+    </ul>
   </div>
-</div>
-<div class="navbar-dropdown">
-  <ul>
-    <li><%= link_to "Home", "#", class: "index-nav-link" %></li>
-    <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
-        Foods <%= image_tag('arrow-drop-down-rounded.svg') %>
-      <% end %>
-      <div class="dropdown-content foods">
-        <%= link_to "Japanese", "#"%>
-        <%= link_to "Western", "#"%>
-        <%= link_to "Korean", "#"%>
+  <h2 class="small-header">Popular Attractions</h2>
+  <div class="cards">
+    <div class="cta">
+      <%= image_tag "hika-park.jpg" %>
+      <div class="text">
+        <h2>Location Title</h2>
+        <p>Short description of the location will be added when we create the seeds. I am thinking if we can do what Doug did on the middleman.</p>
       </div>
-    </li>
-    <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
-        Experiences <%= image_tag('arrow-drop-down-rounded.svg') %>
-      <% end %>
-      <div class="dropdown-content experiences">
-        <%= link_to "Shrines", "#"%>
-        <%= link_to "Parks", "#"%>
-        <%= link_to "Museums", "#"%>
-      </div>
-    </li>
-    <li><%= link_to "My Page", "#", class: "index-nav-link" %></li>
-  </ul>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </div>
-<h2 class="small-header">Popular Attractions</h2>
