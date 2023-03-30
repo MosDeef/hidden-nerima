@@ -25,7 +25,6 @@ class SpotsController < ApplicationController
     end
   end
 
-
   def edit
     @spot = Spot.find(params[:id])
     authorize @spot
@@ -43,7 +42,7 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :location, :description, :category, :hours_open, :type,)
+    params.require(:spot).permit(:name, :location, :description, :category, :hours_open, :sub_category)
   end
 
 end
