@@ -1,5 +1,5 @@
 class Spot < ApplicationRecord
-  validates :name, :location, :description, :category, :type, :user, presence: true
+  validates :name, :location, :description, :category, :user, presence: true
   has_one :user
   has_many :reviews
   has_many :bookmarks
