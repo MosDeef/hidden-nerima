@@ -1,0 +1,10 @@
+<%= simple_form_for spot do |f| %>
+  <%= f.input :name, label: 'Spot name', error: "Spot's must have a name!" %>
+  <%= f.input :location, label: "The location", error: "Must have a location!"%>
+  <%= f.input :category, as: :select, collection: {"food": "food", "experience": "experience"}, label: "Pick a category", error: "Spots must have a category!" %>
+  <%= f.input :sub_category, label: "Get more specific, what type of food or experience is it?" %>
+  <%= f.input :description, label: "Spot's description", error: "You must describe your spot!" %>
+  <%= f.input :hours_open, label: "When is it open?" %>
+  <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'black-shadow'}, label: "Upload as many files as you want, select with ctrl for windows, cmd for Mac!" %>
+  <%= f.button :submit, class: 'btn btn-danger'%>
+<% end %>
