@@ -5,6 +5,4 @@ class Spot < ApplicationRecord
   has_many :bookmarks
   has_many_attached :photos
   enum category: [:location, :food, :experience, :transportation]
-
 end
-r
