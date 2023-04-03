@@ -31,6 +31,7 @@ masamoto_bakery_array = [
 ]
 Spot.destroy_all
 
+
 def spot_creation(user, picture_array, hash = {})
   puts "making spot"
   spot = Spot.new(name: hash[:name], location: hash[:location], category: hash[:category], sub_category: hash[:sub_category], hours_open: hash[:hours_open])
