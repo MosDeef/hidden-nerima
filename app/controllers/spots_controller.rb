@@ -1,5 +1,4 @@
 class SpotsController < ApplicationController
-
   def show
     @spot = Spot.find(params[:id])
     authorize @spot
@@ -7,6 +6,7 @@ class SpotsController < ApplicationController
 
   def index
     @spots = policy_scope(Spot)
+    raise
   end
 
   def new
@@ -44,5 +44,4 @@ class SpotsController < ApplicationController
   def spot_params
     params.require(:spot).permit(:name, :location, :description, :category, :hours_open, :sub_category)
   end
-
 end
