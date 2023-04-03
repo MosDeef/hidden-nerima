@@ -32,7 +32,9 @@
     </ul>
   </div>
   <h2 class="small-header">Popular Attractions</h2>
-  <div class="cards">
+
+  <div class="cards my-relative">
+
     <% @spots.first(50).each do |spot| %>
       <div class="cta">
         <%= cl_image_tag spot.photos.first.key %>
@@ -40,6 +42,9 @@
           <h2><%= spot.name%></h2>
           <p><%= spot.description %></p>
         </div>
+
+        <%= link_to '', spot_path(spot), class: "my-overlay" %>
+
       </div>
     <% end %>
   </div>
