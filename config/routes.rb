@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  devise_for :users, :controllers => { registrations: 'users/registrations' }
+
   root to: "spots#index"
   resources :spots, only: [:index, :show, :create, :new, :edit, :update] do
     resources :bookmarks, only: [:create]
