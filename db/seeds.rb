@@ -33,7 +33,7 @@ Spot.destroy_all
 hikarigaoka_park_array = [
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505231/hika-park-spring_fxl13w.jpg",
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505220/hika-park-summer_gtzvgt.jpg",
-  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505220/hika-park-summer_gtzvgt.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505206/hika-park_hs4toq.jpg",
 ]
 
 def spot_creation(user, picture_array, hash = {})
