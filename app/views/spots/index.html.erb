@@ -28,13 +28,17 @@
           <%= link_to "Museums", "#"%>
         </div>
       </li>
-      <li><%= link_to "My Page", "#", class: "index-nav-link" %></li>
+      <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
+          My Page <%= image_tag('arrow-drop-down-rounded.svg') %>
+        <% end %>
+        <div class="dropdown-content my-page">
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}%>
+        </div>
+      </li>
     </ul>
   </div>
   <h2 class="small-header">Popular Attractions</h2>
-
-  <div class="cards my-relative">
-
+  <div class="cards">
     <% @spots.first(50).each do |spot| %>
       <div class="cta">
         <%= cl_image_tag spot.photos.first.key %>
@@ -42,9 +46,6 @@
           <h2><%= spot.name%></h2>
           <p><%= spot.description %></p>
         </div>
-
-        <%= link_to '', spot_path(spot), class: "my-overlay" %>
-
       </div>
     <% end %>
   </div>
