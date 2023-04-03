@@ -28,7 +28,7 @@ masamoto_bakery_array = [
   'https://res.cloudinary.com/dfjkxrkvj/image/upload/v1680499545/Hidden%20Nerima%20Samples/mdqnctewlptetwxa5kno.jpg',
   'https://res.cloudinary.com/dfjkxrkvj/image/upload/v1680499545/Hidden%20Nerima%20Samples/yykbmufgy8ysiavec0lh.jpg'
 ]
-spot.destroy_all
+Spot.destroy_all
 def spot_creation(user, picture_array, hash = {})
   puts "making spot"
   spot = Spot.new(name: hash[:name], location: hash[:location], category: hash[:category], sub_category: hash[:sub_category], hours_open: hash[:hours_open])
