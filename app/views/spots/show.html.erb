@@ -2,11 +2,16 @@
 <div class="container">
   <div class="headers-icons">
     <div class ="headers">
-      <h2>Place Name</h2>
-      <h3>Place brief description</h3>
+      <h2><%= @spot.name%></h2>
+      <h4><%= @spot.description %></h4>
     </div>
     <div class="icons">
       <h2>Add icons here</h2>
     </div>
+  </div>
+  <div class= "photos">
+    <% @spot.photos.each do |photo| %>
+      <%= cl_image_tag photo.key %>
+    <% end %>
   </div>
 </div>
