@@ -6,7 +6,6 @@ class SpotsController < ApplicationController
 
   def index
     @spots = policy_scope(Spot)
-    raise
   end
 
   def new
