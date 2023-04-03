@@ -7,3 +7,4 @@ class Spot < ApplicationRecord
   enum category: [:location, :food, :experience, :transportation]
 
 end
+r
