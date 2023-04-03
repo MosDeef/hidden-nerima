@@ -41,6 +41,6 @@ class SpotsController < ApplicationController
   end
 
   def spot_params
-    params.require(:spot).permit(:name, :location, :description, :category, :hours_open, :sub_category)
+    params.require(:spot).permit(:name, :location, :description, :category, :hours_open, :sub_category, photos: [])
   end
 end
