@@ -7,6 +7,9 @@ class SpotsController < ApplicationController
   def index
     @spots = policy_scope(Spot)
     @spots = @spots.where(category: params[:category]) if params[:category]
+    if params[:category] == "food" && params[:sub_category]
+      @spots = @spots.where("sub_category ILIKE ?", "%#{params[:sub_category]}%")
+    end
   end
 
   def new
