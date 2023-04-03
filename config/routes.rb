@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: "pages#home"
+  root to: "spots#index"
   resources :spots, only: [:index, :show, :create, :new, :edit, :update] do
     resources :bookmarks, only: [:create]
   end
