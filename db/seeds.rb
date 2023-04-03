@@ -30,7 +30,11 @@ masamoto_bakery_array = [
   "https://res.cloudinary.com/dfjkxrkvj/image/upload/v1680499545/Hidden%20Nerima%20Samples/yykbmufgy8ysiavec0lh.jpg",
 ]
 Spot.destroy_all
-
+hikarigaoka_park_array = [
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505231/hika-park-spring_fxl13w.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505220/hika-park-summer_gtzvgt.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505220/hika-park-summer_gtzvgt.jpg",
+]
 
 def spot_creation(user, picture_array, hash = {})
   puts "making spot"
@@ -49,3 +53,4 @@ def spot_creation(user, picture_array, hash = {})
 end
 
 spot_creation(User.first, masamoto_bakery_array, name: "Masamoto Bakery", location: "175-0092 Tokyo, Itabashi City, Akatsuka, 2 Chome−7−6", category: "food", sub_category: "bakery", hours_open: "12pm to 8pm, Wednesday through Saturday", description: "Technically not Nerima, but it's right along the boarder so we'll count it. A great local bakery that even sells some beer!", picture_array_name: "MasamotoBakery", photo_type: "jpg")
+spot_creation(User.first, hikarigaoka_park_array, name: "Hikarigaoka Park", location: "4 Chome-1-1 Hikarigaoka, Nerima City, Tokyo 179-0072", category: "experience", sub_category: "park", hours_open: "Open 24 hours", description: "Beautiful park perfect for outdoor activities all year long.", picture_array_name: "HikarigaokaPark", photo_type: "jpg")

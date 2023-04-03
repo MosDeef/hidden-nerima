@@ -33,15 +33,15 @@
   </div>
   <h2 class="small-header">Popular Attractions</h2>
   <div class="cards">
-    <div class="cta">
-      <% @spots.first(50).each do |spot| %>
+    <% @spots.first(50).each do |spot| %>
+      <div class="cta">
         <%= cl_image_tag spot.photos.first.key %>
         <div class="text">
           <h2><%= spot.name%></h2>
           <p><%= spot.description %></p>
         </div>
-      <% end %>
-    </div>
+      </div>
+    <% end %>
   </div>
   <br>
   <br>
