@@ -9,9 +9,11 @@
       <h2>Add icons here</h2>
     </div>
   </div>
-  <div class= "photos">
+  <div class= "photos" data-controller="lightbox">
     <% @spot.photos.each do |photo| %>
-      <%= cl_image_tag photo.key %>
+      <%= link_to url_for(photo) do %>
+        <%= cl_image_tag photo.key %>
+      <% end %>
     <% end %>
   </div>
 </div>
