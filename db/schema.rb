@@ -52,12 +52,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_10_042504) do
   end
 
   create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.bigint "spot_id", null: false
     t.string "comment"
     t.integer "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
     t.index ["spot_id"], name: "index_reviews_on_spot_id"
     t.index ["user_id"], name: "index_reviews_on_user_id"
   end
@@ -97,5 +97,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_10_042504) do
   add_foreign_key "bookmarks", "spots"
   add_foreign_key "bookmarks", "users"
   add_foreign_key "reviews", "spots"
+  add_foreign_key "reviews", "users"
   add_foreign_key "spots", "users"
 end
