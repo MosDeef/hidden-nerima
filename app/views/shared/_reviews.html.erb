@@ -1,2 +1,5 @@
 <% @reviews.each do |review| %>
+  <div class="d-flex flex-column mb-1">
+    <p><%= Review.user.full_name %></p>
+  </div>
 <% end %>
