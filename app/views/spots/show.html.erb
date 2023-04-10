@@ -13,11 +13,9 @@
   data-map-api-key-value="<%= ENV['MAPBOX_URL'] %>"></div>
     </div>
   </div>
-  <div class= "photos" data-controller="lightbox">
-    <% @spot.photos.each.with_index do |photo, index|%>
-      <%= link_to url_for(photo), class: "#{"big-picture" if index == 0}" do %>
-        <%= cl_image_tag photo.key, style: "#{"height: 200px; width: 100%;" unless index == 0}" %>
-      <% end %>
+  <div class= "photos">
+    <% @spot.photos.each do |photo|%>
+      <%= cl_image_tag photo.key %>
     <% end %>
   </div>
   <% if @spot.user != current_user %>

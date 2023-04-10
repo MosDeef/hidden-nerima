@@ -4,13 +4,8 @@ class SpotsController < ApplicationController
     @review = Review.new
     @reviews = @spot.reviews
     authorize @spot
-    @markers =
-      {
-        lat: @spot.latitude,
-        lng: @spot.longitude,
-        info_window_html: render_to_string(partial: "shared/info_window", locals: { spot: @spot }),
-
-      }
+    @markers = [lat: @spot.latitude,
+                lng: @spot.longitude]
   end
 
   def index
