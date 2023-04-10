@@ -25,7 +25,11 @@
       <%= render 'shared/new_reviews' %>
     <% end %>
     <% if @reviews %>
-      <%= render 'shared/reviews', reviews: @reviews %>
+      <div data-insert-in-list-target="items">
+        <% @reviews.each do |review| %>
+          <%= render 'spots/review', review: review %>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
