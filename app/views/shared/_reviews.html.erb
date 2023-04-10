@@ -1,5 +1,11 @@
-<% @reviews.each do |review| %>
+<% reviews.each do |review| %>
   <div class="d-flex flex-column mb-1">
-    <p><%= Review.user.full_name %></p>
+    <div class="d-flex">
+      <%review.rating.times do  %>
+        <i class="fa-solid fa-star" style="color: #fcff33;"></i>
+      <% end %>
+    </div>
+    <p>Posted By:<%= review.user.full_name %> At <%= review.posted_time %> </p>
+    <p><%= review.comment %></p>
   </div>
 <% end %>

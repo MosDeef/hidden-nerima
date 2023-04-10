@@ -17,4 +17,7 @@
     <% end %>
   </div>
   <%= render 'shared/new_reviews' %>
+  <% if @reviews %>
+    <%= render 'shared/reviews', reviews: @reviews %>
+  <% end %>
 </div>

@@ -2,6 +2,7 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @review = Review.new
+    @reviews = @spot.reviews
     authorize @spot
   end
 
