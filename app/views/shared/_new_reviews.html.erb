@@ -1,7 +1,8 @@
-<%= simple_form_for([@spot, @review]) do |f| %>
-  <%= f.input :comment %>
-  <%= f.collection_radio_buttons :rating, [[5], [4], [3], [2], [1]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
+  <%= simple_form_for([@spot, @review], data: {insert_in_list_target: "form", action: "submit->insert-in-list#send"}) do |f| %>
+  <%= f.input :comment, as: :text %>
+  <%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
     <%= b.radio_button + b.label {''} %>
   <% end %>  <%= f.button :submit %>
+  <%= link_to "Back to Spots", spots_path %>
 <% end %>
-<%= link_to "Back to Spots", spots_path %>
+<%# data: {insert_in_list_target: "form", action: "submit->insert-in-list#send"}) %>
