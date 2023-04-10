@@ -1,11 +1,13 @@
-<% reviews.each do |review| %>
-  <div class="d-flex flex-column mb-1">
-    <div class="d-flex">
-      <%review.rating.times do  %>
-        <i class="fa-solid fa-star" style="color: #fcff33;"></i>
-      <% end %>
+<div data-insert-in-list-target="items">
+  <% reviews.each do |review| %>
+    <div class="d-flex flex-column mb-1">
+      <div class="d-flex">
+        <%review.rating.times do  %>
+          <i class="fa-solid fa-star" style="color: #fcff33;"></i>
+        <% end %>
+      </div>
+      <p>Posted By: <%= review.user.full_name %> At <%= review.posted_time %> </p>
+      <p><%= review.comment %></p>
     </div>
-    <p>Posted By: <%= review.user.full_name %> At <%= review.posted_time %> </p>
-    <p><%= review.comment %></p>
-  </div>
-<% end %>
+  <% end %>
+</div>

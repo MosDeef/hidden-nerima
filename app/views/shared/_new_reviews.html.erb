@@ -1,4 +1,4 @@
-<%= simple_form_for([@spot, @review]) do |f| %>
+  <%= simple_form_for([@spot, @review]), data: {insert_in_list_target: "form"} do |f| %>
   <%= f.input :comment %>
   <%= f.collection_radio_buttons :rating, [[1], [2], [3], [4], [5]], :first, :last, item_wrapper_tag: false, boolean_style: :inline do |b| %>
     <%= b.radio_button + b.label {''} %>

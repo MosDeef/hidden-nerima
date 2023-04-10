@@ -20,10 +20,12 @@
       <% end %>
     <% end %>
   </div>
-  <% if @spot.user != current_user %>
-    <%= render 'shared/new_reviews' %>
-  <% end %>
-  <% if @reviews %>
-    <%= render 'shared/reviews', reviews: @reviews %>
-  <% end %>
+  <div data-controller="insert-in-list">
+    <% if @spot.user != current_user %>
+      <%= render 'shared/new_reviews' %>
+    <% end %>
+    <% if @reviews %>
+      <%= render 'shared/reviews', reviews: @reviews %>
+    <% end %>
+  </div>
 </div>
