@@ -4,6 +4,13 @@ class SpotsController < ApplicationController
     @review = Review.new
     @reviews = @spot.reviews
     authorize @spot
+    @markers =
+      {
+        lat: @spot.latitude,
+        lng: @spot.longitude,
+        info_window_html: render_to_string(partial: "shared/info_window", locals: { spot: @spot }),
+
+      }
   end
 
   def index
@@ -12,14 +19,6 @@ class SpotsController < ApplicationController
     if params[:category] == "food" && params[:sub_category]
       sql_subquery = "sub_category ILIKE :sub_category OR description ILIKE :sub_category"
       @spots = @spots.where(sql_subquery, sub_category: "%#{params[:sub_category]}%")
-    end
-    @markers = @spots.geocoded.map do |spot|
-      {
-        lat: spot.latitude,
-        lng: spot.longitude,
-        info_window_html: render_to_string(partial: "info_window", locals: { spot: spot }),
-
-      }
     end
   end
 
