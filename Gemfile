@@ -37,7 +37,7 @@ gem "pundit"
 
 # rspec testing
 group :development, :test do
-  gem 'rspec-rails', '~> 6.0.0'
+  gem "rspec-rails", "~> 6.0.0"
 end
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
@@ -55,6 +55,9 @@ gem "sassc-rails"
 # Adding the cloudinary gem for images
 gem "cloudinary"
 
+#Adding the geocoder gem for maps
+gem "geocoder"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
@@ -66,7 +69,6 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
   gem "dotenv-rails"
-
 end
 
 group :development do
