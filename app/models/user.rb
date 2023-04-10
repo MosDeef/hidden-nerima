@@ -3,8 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  # has_many :reviews
+  has_many :reviews, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
   has_many :spots, dependent: :destroy
   validates :first_name, :last_name, presence: true
+
+  def full_name
+    first_name.capitalize + ' ' + last_name.capitalize
+  end
 end

@@ -20,5 +20,10 @@
       <% end %>
     <% end %>
   </div>
-  <%= render 'shared/reviews' %>
+  <% if @spot.user != current_user %>
+    <%= render 'shared/new_reviews' %>
+  <% end %>
+  <% if @reviews %>
+    <%= render 'shared/reviews', reviews: @reviews %>
+  <% end %>
 </div>
