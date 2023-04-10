@@ -21,7 +21,7 @@
     <% end %>
   </div>
   <div data-controller="insert-in-list">
-    <% if @spot.user != current_user %>
+    <% if true #@spot.user != current_user %>
       <%= render 'shared/new_reviews' %>
     <% end %>
     <% if @reviews %>

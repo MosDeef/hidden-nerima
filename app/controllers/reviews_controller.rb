@@ -6,9 +6,15 @@ class ReviewsController < ApplicationController
     @review.user = current_user
     authorize @review
     if @review.save
-      redirect_to spot_path(@spot)
+      respond_to do
+        redirect_to spot_path(@spot)
+      end
+      format.json
     else
-      render "spots/show", status: :unprocessable_entity
+      respond_to do |html|
+        render "spots/show", status: :unprocessable_entity
+      end
+      format.json
     end
   end
 
