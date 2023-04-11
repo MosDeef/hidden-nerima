@@ -4,6 +4,30 @@
     <div class ="headers">
       <h2><%= @spot.name%></h2>
       <h4><%= @spot.description %></h4>
+      <div class= "photos">
+        <div id="carouselExampleIndicators<%= @spot.id %>" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators<%= @spot.id %>" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators<%= @spot.id %>" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators<%= @spot.id %>" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner  h-100">
+            <% @spot.photos.each_with_index do |photo, index| %>
+              <div class="carousel-item  h-100 <%= "active" if index == 0 %>">
+                <%= cl_image_tag photo.key, class:"d-block w-100", alt:"..." %>
+              </div>
+            <% end %>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators<%= @spot.id %>" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators<%= @spot.id %>" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
     </div>
     <div class="icons">
       <h2>Add icons here</h2>
@@ -12,11 +36,6 @@
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_URL'] %>"></div>
     </div>
-  </div>
-  <div class= "photos">
-    <% @spot.photos.each do |photo|%>
-      <%= cl_image_tag photo.key %>
-    <% end %>
   </div>
   <% if @spot.user != current_user %>
     <%= render 'shared/new_reviews' %>
