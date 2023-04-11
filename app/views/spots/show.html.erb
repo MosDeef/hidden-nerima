@@ -37,12 +37,6 @@
   data-map-api-key-value="<%= ENV['MAPBOX_URL'] %>"></div>
     </div>
   </div>
-
-  <div class= "photos">
-    <% @spot.photos.each do |photo|%>
-      <%= cl_image_tag photo.key %>
-    <% end %>
-  </div>
   <div data-controller="insert-in-list">
     <% if true #@spot.user != current_user %>
       <%= render 'shared/new_reviews' %>
