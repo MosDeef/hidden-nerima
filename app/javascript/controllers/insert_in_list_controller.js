@@ -4,11 +4,6 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["items", "form"]
   connect() {
-    console.log(this.element);
-    console.log(this.itemsTarget);
-    console.log(this.formTarget);
-    console.log(this.getMetaValue('csrf-token'))
-
   }
   getMetaValue(name) {
     const element = document.head.querySelector(`meta[name="${name}"]`)
@@ -25,11 +20,10 @@ export default class extends Controller {
     .then(response => response.json())
     .then((data) => {
       if (data.inserted_item) {
-        console.log(data)
         this.itemsTarget.insertAdjacentHTML("beforebegin", data.inserted_item)
       }
-      console.log(data.form)
-      this.formTarget.outerHTML = data.form
+      this.formTarget.reset()
+
     })
   }
 }
