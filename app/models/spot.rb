@@ -8,14 +8,17 @@ class Spot < ApplicationRecord
   has_many_attached :photos
   enum category: [:location, :food, :experience, :transportation]
 
-  def average_ratings
+  def average_rating
+    average = nil
     unless reviews.empty?
       sum = 0
       reviews.each do |review|
         sum += review.rating
       end
       average = sum.to_f / reviews.length
-      return average
     end
+    return average.to_i if average.to_i == average
+
+    return average
   end
 end
