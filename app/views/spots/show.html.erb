@@ -31,7 +31,12 @@
     </div>
     <div class="icons-map">
       <div class="icons">
-        <i class="fa-regular fa-star" style="color: #3c3d33;"></i>
+        <div class="d-flex">
+          <% if @reviews.length > 0 %>
+            <%=  %>
+          <% end %>
+          <i class="fa-regular fa-star" style="color: #3c3d33;"></i>
+        </div>
         <i class="fa-regular fa-bookmark" style="color: #3c3d33;"></i>
       </div>
       <div style="width: 100%; height: 600px;"
