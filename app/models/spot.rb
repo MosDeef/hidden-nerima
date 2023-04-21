@@ -7,4 +7,15 @@ class Spot < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
   has_many_attached :photos
   enum category: [:location, :food, :experience, :transportation]
+
+  def average_ratings
+    unless reviews.empty?
+      sum = 0
+      reviews.each do |review|
+        sum += review.rating
+      end
+      average = sum.to_f / reviews.length
+      return average
+    end
+  end
 end
