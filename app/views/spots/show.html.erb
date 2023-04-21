@@ -32,8 +32,10 @@
     <div class="icons-map">
       <div class="icons">
         <div class="d-flex">
-          <% unless @average_rating.nil?%>
-            <%= average_rating %>/5
+          <% if @average_rating.nil?%>
+            No Rating
+          <% else %>
+            <%= @average_rating %>/5
           <% end %>
           <i class="fa-regular fa-star" style="color: #3c3d33;"></i>
         </div>

@@ -3,7 +3,7 @@ class SpotsController < ApplicationController
     @spot = Spot.find(params[:id])
     @review = Review.new
     @reviews = @spot.reviews
-    @average_ratings = @spot.average_rating
+    @average_rating = @spot.average_rating
     @reviews = @spot.reviews.sort { |a, b| b.created_at <=> a.created_at}
     authorize @spot
     @markers = [lat: @spot.latitude,
