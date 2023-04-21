@@ -19,6 +19,6 @@ class Spot < ApplicationRecord
     end
     return average.to_i if average.to_i == average
 
-    return average
+    return average.round(1)
   end
 end
