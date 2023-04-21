@@ -1,0 +1,16 @@
+.icons-map {
+  width: 300px;
+  margin: 1rem 0;
+}
+
+.icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 1rem 0;
+
+  i {
+
+    font-size: 1.8rem;
+  }
+}
