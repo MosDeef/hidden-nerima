@@ -28,8 +28,12 @@ export default class extends Controller {
         console.log(data)
         this.itemsTarget.insertAdjacentHTML("beforebegin", data.inserted_item)
       }
-      console.log(data.form)
-      this.formTarget.outerHTML = data.form
+      console.log(data.form);
+      // data.form.textarea.value = "";
+      // final_form = data.form;
+      // final_form.textarea.value = ""
+      this.formTarget.reset()
+
     })
   }
 }
