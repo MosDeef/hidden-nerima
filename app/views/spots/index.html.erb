@@ -14,19 +14,19 @@
           Foods <%= image_tag('arrow-drop-down-rounded.svg') %>
         <% end %>
         <div class="dropdown-content foods">
-          <%# TODO make these sections more dynamic, so we can pass an array and it will make the links itself for each sub_category stored in the array %>
-          <%= link_to "Japanese", spots_path(category: 'food', sub_category: "japanese")%>
-          <%= link_to "Western", spots_path(category: 'food', sub_category: "Western")%>
-          <%= link_to "Korean", spots_path(category: 'food', sub_category: "Korean")%>
+          <%= link_to "Japanese", spots_path(category: 'food', sub_category: "%japanese%")%>
+          <%= link_to "Western", spots_path(category: 'food', sub_category: "%Western%")%>
+          <%= link_to "Korean", spots_path(category: 'food', sub_category: "%Korean%")%>
+          <%= link_to "Bakery", spots_path(category: 'food', sub_category: "%bakery%")%>
         </div>
       </li>
       <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
           Experiences <%= image_tag('arrow-drop-down-rounded.svg') %>
         <% end %>
         <div class="dropdown-content experiences">
-          <%= link_to "Shrines", "#"%>
-          <%= link_to "Parks", "#"%>
-          <%= link_to "Museums", "#"%>
+          <%= link_to "Shrines", spots_path(category: 'experience', sub_category: "%shrine%")%>
+          <%= link_to "Parks", spots_path(category: 'experience', sub_category: "%park%")%>
+          <%= link_to "Museums", spots_path(category: 'experience', sub_category: "%museum%")%>
         </div>
       </li>
       <li class="dropdown"><%= link_to '#', class:"dropbtn" do%>
@@ -34,6 +34,20 @@
         <% end %>
         <div class="dropdown-content my-page">
           <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}%>
+        </div>
+      </li>
+      <li> 
+        <div class="search-container">
+          <form action="/spots">
+            <div>
+              <input type="radio" id="food" name="category" value="food" />
+              <label for="food">Food</label>
+              <input type="radio" id="experience" name="category" value="experience" />
+              <label for="experience">Experience</label>
+            </div>
+            <input class="search" type="text" placeholder="Search.." name="sub_category">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
         </div>
       </li>
     </ul>
