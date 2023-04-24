@@ -53,4 +53,38 @@ def spot_creation(user, picture_array, hash = {})
 end
 
 spot_creation(User.first, masamoto_bakery_array, name: "Masamoto Bakery", location: "175-0092 Tokyo, Itabashi, Akatsuka, 276", category: "food", sub_category: "bakery", hours_open: "12pm to 8pm, Wednesday through Saturday", description: "Technically not Nerima, but it's right along the boarder so we'll count it. A great local bakery that even sells some beer!", picture_array_name: "MasamotoBakery", photo_type: "jpg")
-spot_creation(User.first, hikarigaoka_park_array, name: "Hikarigaoka Park", location: "411 Hikarigaoka, Nerima, Tokyo", category: "experience", sub_category: "park", hours_open: "Open 24 hours", description: "Beautiful park perfect for outdoor activities all year long.", picture_array_name: "HikarigaokaPark", photo_type: "jpg")
+spot_creation(User.last, hikarigaoka_park_array, name: "Hikarigaoka Park", location: "411 Hikarigaoka, Nerima, Tokyo", category: "experience", sub_category: "park", hours_open: "Open 24 hours", description: "Beautiful park perfect for outdoor activities all year long.", picture_array_name: "HikarigaokaPark", photo_type: "jpg")
+
+REVIEW_INFO = {
+  'rev_one' => {
+    comment: "Not my cup of tea, won't go back",
+    rating: 1},
+  rev_two: {
+    comment: "Ya know, not the best, but not the worst place I've been",
+    rating: 2},
+  rev_three: {
+    comment: "It was fine. Might go again",
+    rating: 3},
+  rev_four: {
+    comment: "A great place, I loved it!",
+    rating: 4},
+  rev_five: {
+    comment: "Literally my favorite. I will be back, soon, like tomorrow, maybe. Love it!!",
+    rating: 5}
+}
+REVIEW_OPTIONS = %w(rev_one rev_two rev_three rev_four rev_five)
+def create_review(user, spot)
+  review = Review.new
+  review_info = REVIEW_OPTIONS.sample
+  review.comment = REVIEW_INFO[review_info.to_sym][:comment]
+  review.rating = REVIEW_INFO[review_info.to_sym][:rating]
+  review.user = user
+  review.spot = spot
+  review.save
+  puts "review saved!"
+end
+
+puts "Creating Reviews..."
+create_review(User.first, Spot.last)
+create_review(User.last, Spot.first)
+puts "Seeds finished!"
