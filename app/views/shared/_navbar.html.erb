@@ -10,8 +10,14 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="search-container">
-      <form action="/action_page.php">
-        <input class="search" type="text" placeholder="Search.." name="search">
+      <form action="/spots">
+        <div>
+          <input type="radio" id="food" name="category" value="food" />
+          <label for="contactChoice1">Food</label>
+          <input type="radio" id="experience" name="category" value="experience" />
+          <label for="contactChoice2">Experience</label>
+        </div>
+        <input class="search" type="text" placeholder="Search.." name="sub_category">
         <button type="submit"><i class="fa fa-search"></i></button>
       </form>
     </div>
