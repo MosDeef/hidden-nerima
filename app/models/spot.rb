@@ -10,7 +10,9 @@ class Spot < ApplicationRecord
 
   def average_rating
     average = nil
-    unless reviews.empty?
+    if reviews.empty?
+      return average
+    else
       sum = 0
       reviews.each do |review|
         sum += review.rating
