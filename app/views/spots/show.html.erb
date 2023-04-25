@@ -42,7 +42,11 @@
           <% end %>
           <i class="fa-regular fa-star" style="color: #3c3d33;"></i>
         </div>
-        <i class="fa-regular fa-bookmark" style="color: #3c3d33;"></i>
+        <% if current_user.bookmarks.exists? %>
+          <%= render "shared/destroy_bookmark", bookmark: @bookmark %>
+        <% else %>
+          <%= render "shared/create_bookmark", bookmark: @bookmark %>
+        <% end %>
       </div>
       <div style="width: 100%; height: 600px;"
   data-controller="map"data-controller="disable-button"

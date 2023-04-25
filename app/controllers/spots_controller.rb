@@ -2,9 +2,10 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @review = Review.new
+    @bookmark = Bookmark.new
     @reviews = @spot.reviews
     @average_rating = @spot.average_rating
-    @reviews = @spot.reviews.sort { |a, b| b.created_at <=> a.created_at}
+    @reviews = @spot.reviews.sort { |a, b| b.created_at <=> a.created_at }
     authorize @spot
     @markers = [lat: @spot.latitude,
                 lng: @spot.longitude]
