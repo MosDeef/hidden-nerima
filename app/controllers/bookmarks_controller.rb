@@ -1,5 +1,4 @@
 class BookmarksController < ApplicationController
-
   def index
     @bookmarks = policy_scope(Bookmark)
   end
@@ -13,13 +12,14 @@ class BookmarksController < ApplicationController
     authorize @bookmark
     # TODO: decide what we want to to after saved bookmark
     # maybe just keep you on the same page, but update screen element?
-    @bookmark.save
+    if @bookmark.save
+      redirect_to spot_path(@spot)
+    end
   end
 
   def delete
     @bookmark = Bookmark.find(params[:id])
+    current_user.bookmarks.where(spot: @bookmark.spot).destroy_all
     authorize @bookmark
   end
-
-
 end

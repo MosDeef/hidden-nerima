@@ -1,10 +1,10 @@
 import { Controller } from "@hotwired/stimulus"
-
+document.querySelector('.icons').innerHTML.addEventListener('click', fill).innerHTML;
 export default class extends Controller {
   fill(e) {
-    e.preventDefault();
-    this.element.classList.remove();
-    this.element.classList.remove(this.fa - solid);
+    const tgt = e.target.firstElementChild;
+    tgt.classList.toggle('fa-solid');
+    tgt.classList.toggle('fa-regular');
   }
 
 }
