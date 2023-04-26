@@ -1,0 +1,11 @@
+<div class="container d-flex flex-column align-items-center">
+  <div class="d-flex w-100 justify-content-center">
+    <div class="profile-picture">
+      <%= image_tag 'default_images/profile_picture.png', alt: "Profile picture of a person", class: "profile-picture-size" %>
+    </div>
+    <div class="name-info d-flex align-items-center" style= "margin-left:8%">
+      <h2>
+        <%= @user.full_name %></div>
+    </h2>
+  </div>
+</div>
