@@ -17,9 +17,12 @@ class BookmarksController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @bookmark = Bookmark.find(params[:id])
-    current_user.bookmarks.where(spot: @bookmark.spot).destroy_all
+    @spot = @bookmark.spot
     authorize @bookmark
+    if current_user.bookmarks.where(spot: @spot).destroy_all
+      redirect_to spot_path(@spot)
+    end
   end
 end

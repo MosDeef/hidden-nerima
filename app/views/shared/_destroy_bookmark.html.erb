@@ -1,4 +1,4 @@
-<%= simple_form_for [@spot, @bookmark],url:bookmarks_path(@bookmark.spot, bookmark), method: :delete, remote: true do |f| %>
+<%= simple_form_for @bookmark, url:bookmark_path(@bookmark), method: :delete, remote: true do |f| %>
   <%= button_tag type: 'submit' do %>
     <i class="fa-solid fa-bookmark" style="color: #eeff00;" aria-hidden="true"></i>
   <% end %>

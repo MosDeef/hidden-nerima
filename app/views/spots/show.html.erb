@@ -42,7 +42,7 @@
           <% end %>
           <i class="fa-regular fa-star" style="color: #3c3d33;"></i>
         </div>
-        <% if current_user.bookmarks.exists? %>
+        <% if @bookmark_present %>
           <%= render "shared/destroy_bookmark", bookmark: @bookmark %>
         <% else %>
           <%= render "shared/create_bookmark", bookmark: @bookmark %>
