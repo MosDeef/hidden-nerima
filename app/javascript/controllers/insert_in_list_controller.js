@@ -4,6 +4,7 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["items", "form"]
   connect() {
+    console.log('hi')
   }
   getMetaValue(name) {
     const element = document.head.querySelector(`meta[name="${name}"]`)
