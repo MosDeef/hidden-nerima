@@ -2,7 +2,14 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     @review = Review.new
-    @bookmark = Bookmark.new
+    if current_user.bookmarks.where(spot: @spot).first
+      @bookmark_present = true
+      # Just in case a glitch happens and the user has multiple bookmarks, we are doing this
+      @bookmark = current_user.bookmarks.where(spot: @spot).first
+    else
+      @bookmark_present = false
+      @bookmark = Bookmark.new
+    end
     @reviews = @spot.reviews
     @average_rating = @spot.average_rating
     @reviews = @spot.reviews.sort { |a, b| b.created_at <=> a.created_at }
