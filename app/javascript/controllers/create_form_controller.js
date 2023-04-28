@@ -1,29 +1,22 @@
 import { Controller } from "@hotwired/stimulus"
-
-// Connects to data-controller="insert-in-list"
+// Connects to data-controller="create-form"
 export default class extends Controller {
-  static targets = ["items", "form"]
+  static targets = ["form"]
   connect() {
-  }
-  getMetaValue(name) {
-    const element = document.head.querySelector(`meta[name="${name}"]`)
-    return element.getAttribute("content")
+    console.log("hello");
   }
   send(event) {
     event.preventDefault()
+
+    console.log("TODO: send request in AJAX")
     fetch(this.formTarget.action, {
       method: "POST",
       headers: { "Accept": "application/json" },
       body: new FormData(this.formTarget)
-
     })
       .then(response => response.json())
       .then((data) => {
-        if (data.inserted_item) {
-          this.itemsTarget.insertAdjacentHTML("beforebegin", data.inserted_item)
-        }
-        this.formTarget.reset()
-
+        console.log(data)
       })
   }
 }
