@@ -1,14 +1,17 @@
 import { Controller } from "@hotwired/stimulus"
-document.querySelector('.icons').innerHTML.addEventListener('click', fill).innerHTML;
+
+// Connects to data-controller="icons"
 export default class extends Controller {
-  fill(e) {
-    const tgt = e.target.firstElementChild;
-    tgt.classList.toggle('fa-solid');
-    tgt.classList.toggle('fa-regular');
+  static targets = ["icon"]
+  connect() {
+    console.log("icons controller active")
   }
-
+  toggleclass() {
+    var element = document.getElementById("bookmark");
+    // element.style.color = "#ff0000";
+    element.classList.toggle("fa-regular");
+    element.classList.toggle("fa-solid");
+    // element.addEventListener('click', this.toggleclass)
+  }
+  bookmarkIcon = document.getElementById("bookmark").addEventListener('click', this.toggleclass)
 }
-
-
-
-/* <i class="fa-solid fa-bookmark"></i> */

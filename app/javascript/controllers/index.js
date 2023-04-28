@@ -4,8 +4,14 @@
 
 import { application } from "./application"
 
+import CreateFormController from "./create_form_controller"
+application.register("create-form", CreateFormController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import IconsController from "./icons_controller"
+application.register("icons", IconsController)
 
 import InsertInListController from "./insert_in_list_controller"
 application.register("insert-in-list", InsertInListController)

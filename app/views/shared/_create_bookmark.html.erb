@@ -1,5 +1,10 @@
-<%= simple_form_for [@spot, @bookmark] do |f| %>
-  <%= button_tag type: 'submit' do %>
-    <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+<div data-controller = "create-form">
+  <%= simple_form_for [@spot, @bookmark],data: {
+    create_form_target: "form",
+    action: "submit->create_form#send"
+  } do |f| %>
+    <%= f.button :submit do %>
+      <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+    <% end %>
   <% end %>
-<% end %>
+</div>
