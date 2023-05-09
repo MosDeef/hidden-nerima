@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CarouselActivatorController from "./carousel_activator_controller"
+application.register("carousel-activator", CarouselActivatorController)
+
 import CreateFormController from "./create_form_controller"
 application.register("create-form", CreateFormController)
 

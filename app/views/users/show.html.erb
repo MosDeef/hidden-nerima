@@ -1,11 +1,36 @@
-<div class="container d-flex flex-column align-items-center">
-  <div class="d-flex w-100 justify-content-center">
+<div class="container d-flex flex-column align-items-center mt-3">
+  <div class="d-flex justify-content-center shadow bg-white p-3 mb-3">
     <div class="profile-picture">
       <%= image_tag 'default_images/profile_picture.png', alt: "Profile picture of a person", class: "profile-picture-size" %>
     </div>
-    <div class="name-info d-flex align-items-center" style= "margin-left:8%">
+    <div class="name-info d-flex align-items-center justify-content-center flex-column" style= "margin-left:8%">
       <h2>
-        <%= @user.full_name %></div>
-    </h2>
+        <%= @user.full_name %>
+      </h2>
+      <h4 class="profile-description"><% if @user.description %>
+          <%= @user.description %>
+        <% end %>
+      </h4>
+    </div>
+  </div>
+  <div class="d-flex justify-content-center shadow bg-white p-3 mb-3">
+    <% if @my_spots %>
+      <div data-controller="carousel-activator">
+        <div id="carouselMySpots" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner activate-me" data-carousel-activator-target="activators">
+            <% @user.organize_spots_by_three(@my_spots).each do |array| %>
+              <div class="carousel-item">
+                <div class="cards-second-grid">
+                  <% #TODO make carousel buttons go right and left, upgrade seeds to have more spots %>
+                  <% array.each do |spot| %>
+                    <%= render 'spots/spot_card', spot: spot %>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
