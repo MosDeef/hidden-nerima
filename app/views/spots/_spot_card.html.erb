@@ -1,0 +1,8 @@
+<div class="cta">
+  <%= cl_image_tag spot.photos.first.key %>
+  <div class="text">
+    <h2><%= spot.name%></h2>
+    <p><%= spot.description %></p>
+  </div>
+  <%= link_to '', spot_path(spot), class: "my-overlay" %>
+</div>

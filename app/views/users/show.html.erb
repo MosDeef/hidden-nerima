@@ -1,5 +1,5 @@
-<div class="container d-flex flex-column align-items-center">
-  <div class="d-flex w-100 justify-content-center">
+<div class="container d-flex flex-column align-items-center mt-3">
+  <div class="d-flex justify-content-center shadow bg-white p-3 mb-3">
     <div class="profile-picture">
       <%= image_tag 'default_images/profile_picture.png', alt: "Profile picture of a person", class: "profile-picture-size" %>
     </div>
@@ -12,5 +12,12 @@
         <% end %>
       </h4>
     </div>
+  </div>
+  <div class="d-flex justify-content-center shadow bg-white p-3 mb-3">
+    <% if @my_spots %>
+      <% @my_spots.each do |spot| %>
+        <%= render 'spots/spot_card', spot: spot %>
+      <% end %>
+    <% end %>
   </div>
 </div>
