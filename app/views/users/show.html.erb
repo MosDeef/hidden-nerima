@@ -21,6 +21,7 @@
             <% @user.organize_spots_by_three(@my_spots).each do |array| %>
               <div class="carousel-item">
                 <div class="cards-second-grid">
+                  <% #TODO make carousel buttons go right and left, upgrade seeds to have more spots %>
                   <% array.each do |spot| %>
                     <%= render 'spots/spot_card', spot: spot %>
                   <% end %>
