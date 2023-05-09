@@ -17,7 +17,7 @@
     <% if @my_spots %>
       <div class="cards" data-controller="carousel-activator">
         <div id="carouselMySpots" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner" data-carousel-activator-target="activate-me">
+          <div class="carousel-inner activate-me" data-carousel-activator-target="activators">
             <% @user.organize_spots_by_three(@my_spots).each do |array| %>
               <div class="carousel-item">
                 <% array.each do |spot| %>

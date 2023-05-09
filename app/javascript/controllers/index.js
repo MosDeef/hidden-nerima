@@ -21,6 +21,3 @@ application.register("insert-in-list", InsertInListController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
-
-import CarouselActivatorController from "./carousel_activator"
-application.register("carousel-activator", CarouselActivatorController)
