@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import CarouselActivatorController from "./carousel_activator_controller"
+application.register("carousel-activator", CarouselActivatorController)
+
 import CreateFormController from "./create_form_controller"
 application.register("create-form", CreateFormController)
 
@@ -18,3 +21,6 @@ application.register("insert-in-list", InsertInListController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
+
+import CarouselActivatorController from "./carousel_activator"
+application.register("carousel-activator", CarouselActivatorController)

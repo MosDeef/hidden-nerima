@@ -15,13 +15,19 @@
   </div>
   <div class="d-flex justify-content-center shadow bg-white p-3 mb-3">
     <% if @my_spots %>
-      <div class="cards">
-        <% @user.organize_spots_by_three(@my_spots).each do |array| %>
-          <% array.each do |spot| %>
-            <%= render 'spots/spot_card', spot: spot %>
-          <% end %>
-        <% end %>
-      <% end %>
-    </div>
+      <div class="cards" data-controller="carousel-activator">
+        <div id="carouselMySpots" class="carousel slide" data-ride="carousel">
+          <div class="carousel-inner" data-carousel-activator-target="activate-me">
+            <% @user.organize_spots_by_three(@my_spots).each do |array| %>
+              <div class="carousel-item">
+                <% array.each do |spot| %>
+                  <%= render 'spots/spot_card', spot: spot %>
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
