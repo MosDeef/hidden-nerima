@@ -1,0 +1,30 @@
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+// .carousel-control-next {
+//   right: 18%;
+// }
+
+.carousel-indicators {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  // right: 20%;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  /* margin-right: 0%; */
+  margin-bottom: 1rem;
+  /* margin-left: -18%; */
+  list-style: none;
+}
+
+.photo-width {
+  width: initial;
+}
