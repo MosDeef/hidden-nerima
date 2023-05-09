@@ -17,7 +17,7 @@
           <div class="carousel-inner  h-100">
             <% @spot.photos.each_with_index do |photo, index| %>
               <div class="carousel-item  h-100 <%= "active" if index == 0 %>">
-                <%= cl_image_tag photo.key, class:"d-block w-100", alt:"..." %>
+                <%= cl_image_tag photo.key, class:"d-block photo-width", alt:"..." %>
               </div>
             <% end %>
           </div>
@@ -42,11 +42,6 @@
           <% end %>
           <i class="fa-regular fa-star" id="star" ></i>
         </div>
-        <% if @bookmark_present %>
-          <%= render "shared/destroy_bookmark", bookmark: @bookmark %>
-        <% else %>
-          <%= render "shared/create_bookmark", bookmark: @bookmark %>
-        <% end %>
         <i class="fa-regular fa-bookmark" id="bookmark" create_form_target= "icon",
     action= "submit->icons#toggleclass"></i>
       </div>
