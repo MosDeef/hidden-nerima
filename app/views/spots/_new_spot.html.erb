@@ -1,5 +1,5 @@
 <%= simple_form_for spot do |f| %>
-  <div class="container d-flex align-items-center justify-content-center">
+  <div class="form-container container d-flex align-items-center justify-content-center">
     <div class="w-50">
       <%= f.input :name, label: 'Spot name', error: "Spot's must have a name!" %>
       <%= f.input :location, label: "The location", error: "Must have a location!" %>
@@ -8,7 +8,7 @@
       <%= f.input :description, label: "Spot's description", error: "You must describe your spot!" %>
       <%= f.input :hours_open, label: "When is it open?" %>
       <%= f.input :photos, as: :file, input_html: { multiple: true, class: 'black-shadow'}, label: "Upload as many photos as you want, select with ctrl for windows, cmd for Mac!" %>
-      <%= f.button :submit, class: 'btn btn-danger'%>
+      <%= f.button :submit, class: 'btn form-btn'%>
     </div>
   </div>
 <% end %>
