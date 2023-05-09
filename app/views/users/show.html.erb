@@ -3,9 +3,14 @@
     <div class="profile-picture">
       <%= image_tag 'default_images/profile_picture.png', alt: "Profile picture of a person", class: "profile-picture-size" %>
     </div>
-    <div class="name-info d-flex align-items-center" style= "margin-left:8%">
+    <div class="name-info d-flex align-items-center justify-content-center flex-column" style= "margin-left:8%">
       <h2>
-        <%= @user.full_name %></div>
-    </h2>
+        <%= @user.full_name %>
+      </h2>
+      <h4 class="profile-description"><% if @user.description %>
+          <%= @user.description %>
+        <% end %>
+      </h4>
+    </div>
   </div>
 </div>
