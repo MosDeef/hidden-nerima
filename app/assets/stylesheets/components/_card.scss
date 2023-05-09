@@ -5,6 +5,12 @@
   grid-template-rows: 1fr 1fr;
   gap: 8px 17px;
 }
+.cards-second-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px 17px;
+
+}
 
 .cta-background {
   background-size: cover;
