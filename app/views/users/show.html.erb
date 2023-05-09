@@ -15,9 +15,13 @@
   </div>
   <div class="d-flex justify-content-center shadow bg-white p-3 mb-3">
     <% if @my_spots %>
-      <% @my_spots.each do |spot| %>
-        <%= render 'spots/spot_card', spot: spot %>
+      <div class="cards">
+        <% @user.organize_spots_by_three(@my_spots).each do |array| %>
+          <% array.each do |spot| %>
+            <%= render 'spots/spot_card', spot: spot %>
+          <% end %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

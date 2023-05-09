@@ -4,4 +4,5 @@ class UsersController < ApplicationController
     @my_spots = @user.spots
     authorize @user
   end
+
 end
