@@ -1,0 +1,27 @@
+    
+<div class="d-flex justify-content-center shadow bg-white p-3 mb-3">
+  <div data-controller="carousel-activator">
+    <div id="carouselMySpots" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner activate-me" data-carousel-activator-target="activators">
+        <% @user.organize_spots_by_three(spots).each do |array| %>
+          <div class="carousel-item p-3">
+            <div class="cards-second-grid">
+              <% #TODO make carousel buttons go right and left, upgrade seeds to have more spots %>
+              <% array.each do |spot| %>
+                <%= render 'spots/spot_card', spot: spot %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <a class="carousel-control-prev carousel-control-prev-custom" href="#carouselMySpots" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next carousel-control-next-custom" href="#carouselMySpots" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+</div>
