@@ -36,3 +36,15 @@
 .carousel-control-prev-icon {
   background-image: url("left-arrow.png") !important;
 }
+
+
+// this is loaded after bootstrap carousel and will overload the right and left, use for custom arrow positions on carousel.
+// However, you do need to include the carousel-control-next / prev class, otherwise otehr necessary css won't be included
+.carousel-control-next-custom {
+  right: -7%;
+
+}
+
+.carousel-control-prev-custom {
+  left: -7%;
+}
