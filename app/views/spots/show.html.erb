@@ -42,8 +42,13 @@
           <% end %>
           <i class="fa-regular fa-star" id="star" ></i>
         </div>
-        <i class="fa-regular fa-bookmark" id="bookmark" create_form_target= "icon",
-    action= "submit->icons#toggleclass"></i>
+        <% if @bookmark_present %>
+          <%= render 'bookmarks/delete', bookmark: @bookmark %>
+        <% else %>
+          <%= render 'bookmarks/new', spot: @spot, bookmark: @bookmark %>
+        <% end %>
+        <%# <i class="fa-regular fa-bookmark" id="bookmark" create_form_target= "icon",
+    action= "submit->icons#toggleclass"></i> %>
       </div>
       <div style="width: 100%; height: 600px;"
   data-controller="map"data-controller="disable-button"

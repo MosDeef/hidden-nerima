@@ -7,11 +7,13 @@ export default class extends Controller {
     console.log("icons controller active")
   }
   toggleclass() {
-    var element = document.getElementById("bookmark");
-    // element.style.color = "#ff0000";
-    element.classList.toggle("fa-regular");
-    element.classList.toggle("fa-solid");
-    // element.addEventListener('click', this.toggleclass)
+
+    // var element = document.getElementById("bookmark");
+
+    // // element.style.color = "#ff0000";
+    // element.classList.toggle("fa-regular");
+    // element.classList.toggle("fa-solid");
+    // // element.addEventListener('click', this.toggleclass)
   }
-  bookmarkIcon = document.getElementById("bookmark").addEventListener('click', this.toggleclass)
+  // bookmarkIcon = document.getElementById("bookmark").addEventListener('click', this.toggleclass)
 }

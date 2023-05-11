@@ -16,7 +16,7 @@
   <% if @my_spots.length > 0 %>
     <%= render 'spots/spot_carousel', spots: @my_spots %>
   <% end %>
-  <% if @my_bookmarks.length > 0  %>
-    <%= render 'spots/spot_carousel', spots: @my_bookmarks %>
+  <% if @my_bookmark_spots.length > 0  %>
+    <%= render 'spots/spot_carousel', spots: @my_bookmark_spots %>
   <% end %>
 </div>
