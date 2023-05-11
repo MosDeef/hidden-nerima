@@ -35,6 +35,11 @@ hikarigaoka_park_array = [
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505220/hika-park-summer_gtzvgt.jpg",
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1680505206/hika-park_hs4toq.jpg",
 ]
+honkaku_temple_array = [
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683785739/honkaku_ezn3ac.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683785744/honkakuji_ugeigr.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683785751/honkaku-inside_s2yevj.jpg",
+]
 
 def spot_creation(user, picture_array, hash = {})
   puts "making spot"
@@ -54,25 +59,32 @@ end
 
 spot_creation(User.first, masamoto_bakery_array, name: "Masamoto Bakery", location: "175-0092 Tokyo, Itabashi, Akatsuka, 276", category: "food", sub_category: "bakery", hours_open: "12pm to 8pm, Wednesday through Saturday", description: "Technically not Nerima, but it's right along the boarder so we'll count it. A great local bakery that even sells some beer!", picture_array_name: "MasamotoBakery", photo_type: "jpg")
 spot_creation(User.last, hikarigaoka_park_array, name: "Hikarigaoka Park", location: "411 Hikarigaoka, Nerima, Tokyo", category: "experience", sub_category: "park", hours_open: "Open 24 hours", description: "Beautiful park perfect for outdoor activities all year long.", picture_array_name: "HikarigaokaPark", photo_type: "jpg")
+spot_creation(User.last, honkaku_temple_array, name: "Honkaku Temple", location: "179-0071 Tokyo, Nerima, Asahicho, 1265", category: "experience", sub_category: "shrine", hours_open: "Open 24 hours", description: "Beautiful shrine established in the early 17th century .", picture_array_name: "HonkakuTemple", photo_type: "jpg")
 
 REVIEW_INFO = {
-  'rev_one' => {
+  rev_one: {
     comment: "Not my cup of tea, won't go back",
-    rating: 1},
+    rating: 1,
+  },
   rev_two: {
     comment: "Ya know, not the best, but not the worst place I've been",
-    rating: 2},
+    rating: 2,
+  },
   rev_three: {
-    comment: "It was fine. Might go again",
-    rating: 3},
+               comment: "It was fine. Might go again",
+               rating: 3,
+             },
   rev_four: {
     comment: "A great place, I loved it!",
-    rating: 4},
+    rating: 4,
+  },
   rev_five: {
     comment: "Literally my favorite. I will be back, soon, like tomorrow, maybe. Love it!!",
-    rating: 5}
+    rating: 5,
+  },
 }
 REVIEW_OPTIONS = %w(rev_one rev_two rev_three rev_four rev_five)
+
 def create_review(user, spot)
   review = Review.new
   review_info = REVIEW_OPTIONS.sample
