@@ -56,7 +56,7 @@ spot_creation(User.first, masamoto_bakery_array, name: "Masamoto Bakery", locati
 spot_creation(User.last, hikarigaoka_park_array, name: "Hikarigaoka Park", location: "411 Hikarigaoka, Nerima, Tokyo", category: "experience", sub_category: "park", hours_open: "Open 24 hours", description: "Beautiful park perfect for outdoor activities all year long.", picture_array_name: "HikarigaokaPark", photo_type: "jpg")
 
 REVIEW_INFO = {
-  'rev_one' => {
+  rev_one: {
     comment: "Not my cup of tea, won't go back",
     rating: 1},
   rev_two: {
