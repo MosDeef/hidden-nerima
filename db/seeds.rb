@@ -48,6 +48,9 @@ anrakutei_array = [
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788516/yakiniku-steak_ugu3ke.jpg",
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788501/yakiniku-menu_ou2axy.jpg",
 ]
+nerima_museum_array = [
+ # add photos
+  ]
 
 def spot_creation(user, picture_array, hash = {})
   puts "making spot"
@@ -69,6 +72,7 @@ spot_creation(User.first, masamoto_bakery_array, name: "Masamoto Bakery", locati
 spot_creation(User.last, hikarigaoka_park_array, name: "Hikarigaoka Park", location: "411 Hikarigaoka, Nerima, Tokyo", category: "experience", sub_category: "park", hours_open: "Open 24 hours", description: "Beautiful park perfect for outdoor activities all year long.", picture_array_name: "HikarigaokaPark", photo_type: "jpg")
 spot_creation(User.last, honkaku_temple_array, name: "Honkaku Temple", location: "179-0071 Tokyo, Nerima, Asahicho, 1265", category: "experience", sub_category: "shrine", hours_open: "Open 24 hours", description: "Historical shrine established in the early 17th century .", picture_array_name: "HonkakuTemple", photo_type: "jpg")
 spot_creation(User.last, anrakutei_array, name: "Anrakutei Heiwadaiten", location: "21735 Hayamiya, Nerima, Tokyo,  ", category: "food", sub_category: "yakiniku", hours_open: "11am to 10pm", description: "Delicious and convenient yakiniku restaurant near Heiwadai Station.", picture_array_name: "Anrakutei", photo_type: "jpg")
+spot_creation(User.last, nerima_museum_array, name: "Nerima Art Museum", location: "〒176-0021 東京都練馬区貫井１丁目３６−１６", category: "experience", sub_category: "museum", hours_open: "10am to 6pm Tuesday to Sunday", description: "Fascinating exhibitions centered on modern & contemporary Japanese art", picture_array_name: "NerimaMuseum", photo_type: "jpg")
 
 REVIEW_INFO = {
   rev_one: {
@@ -79,10 +83,10 @@ REVIEW_INFO = {
     comment: "Ya know, not the best, but not the worst place I've been",
     rating: 2,
   },
-  rev_three: {
+             rev_three: {
                comment: "It was fine. Might go again",
                rating: 3,
-             },
+  },
   rev_four: {
     comment: "A great place, I loved it!",
     rating: 4,
