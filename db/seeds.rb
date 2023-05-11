@@ -40,6 +40,14 @@ honkaku_temple_array = [
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683785744/honkakuji_ugeigr.jpg",
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683785751/honkaku-inside_s2yevj.jpg",
 ]
+anrakutei_array = [
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788507/yakiniku-out_boyeul.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788512/yakiniku-plate_gltzi9.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788526/yakiniku-cooked_rrzdmr.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788521/yakiniku-set_nu5zrx.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788516/yakiniku-steak_ugu3ke.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1683788501/yakiniku-menu_ou2axy.jpg",
+]
 
 def spot_creation(user, picture_array, hash = {})
   puts "making spot"
@@ -60,6 +68,7 @@ end
 spot_creation(User.first, masamoto_bakery_array, name: "Masamoto Bakery", location: "175-0092 Tokyo, Itabashi, Akatsuka, 276", category: "food", sub_category: "bakery", hours_open: "12pm to 8pm, Wednesday through Saturday", description: "Technically not Nerima, but it's right along the boarder so we'll count it. A great local bakery that even sells some beer!", picture_array_name: "MasamotoBakery", photo_type: "jpg")
 spot_creation(User.last, hikarigaoka_park_array, name: "Hikarigaoka Park", location: "411 Hikarigaoka, Nerima, Tokyo", category: "experience", sub_category: "park", hours_open: "Open 24 hours", description: "Beautiful park perfect for outdoor activities all year long.", picture_array_name: "HikarigaokaPark", photo_type: "jpg")
 spot_creation(User.last, honkaku_temple_array, name: "Honkaku Temple", location: "179-0071 Tokyo, Nerima, Asahicho, 1265", category: "experience", sub_category: "shrine", hours_open: "Open 24 hours", description: "Historical shrine established in the early 17th century .", picture_array_name: "HonkakuTemple", photo_type: "jpg")
+spot_creation(User.last, anrakutei_array, name: "Anrakutei Heiwadaiten", location: "21735 Hayamiya, Nerima, Tokyo,  ", category: "food", sub_category: "yakiniku", hours_open: "11am to 10pm", description: "Delicious and convenient yakiniku restaurant near Heiwadai Station.", picture_array_name: "Anrakutei", photo_type: "jpg")
 
 REVIEW_INFO = {
   rev_one: {

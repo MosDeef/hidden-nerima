@@ -3,8 +3,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  gap: 8px 17px;
+  gap: 2rem 17px;
+  margin-bottom: 3rem;
 }
+
 .cards-second-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
