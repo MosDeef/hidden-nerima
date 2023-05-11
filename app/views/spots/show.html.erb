@@ -47,6 +47,7 @@
       </div>
       <%# IN PROGRESS %>
       <% if @bookmark_present %>
+        <%= render 'bookmarks/delete', bookmark: @bookmark %>
       <% else %>
         <%= render 'bookmarks/new', spot: @spot, bookmark: @bookmark %>
       <% end %>
