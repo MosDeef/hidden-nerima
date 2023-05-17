@@ -60,6 +60,7 @@ inoko_ramen_array = [
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1684300946/ramen_qwdioi.jpg",
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1684300952/clam-ramen_eku2yr.jpg",
   "https://res.cloudinary.com/dwufxkqdp/image/upload/v1684300956/rice-pork_wqxyge.jpg",
+  "https://res.cloudinary.com/dwufxkqdp/image/upload/v1684300961/menu_e1g9jv.jpg",
 ]
 
 def spot_creation(user, picture_array, hash = {})
@@ -83,7 +84,7 @@ spot_creation(User.last, hikarigaoka_park_array, name: "Hikarigaoka Park", locat
 spot_creation(User.last, honkaku_temple_array, name: "Honkaku Temple", location: "179-0071 Tokyo, Nerima, Asahicho, 1265", category: "experience", sub_category: "shrine", hours_open: "Open 24 hours", description: "Historical shrine established in the early 17th century .", picture_array_name: "HonkakuTemple", photo_type: "jpg")
 spot_creation(User.last, anrakutei_array, name: "Anrakutei Heiwadaiten", location: "2 17 35 Hayamiya, Nerima, Tokyo", category: "food", sub_category: "yakiniku", hours_open: "11am to 10pm", description: "Delicious and convenient yakiniku restaurant near Heiwadai Station.", picture_array_name: "Anrakutei", photo_type: "jpg")
 spot_creation(User.last, nerima_museum_array, name: "Nerima Art Museum", location: "176-0021 Tokyo, Nerima, Nukui, 13616", category: "experience", sub_category: "museum", hours_open: "10am to 6pm Tuesday to Sunday", description: "Fascinating exhibitions centered on modern & contemporary Japanese art", picture_array_name: "NerimaMuseum", photo_type: "jpg")
-spot_creation(User.last, inoko_ramen_array, name: "Inoko Ramen", location: "2528 Heiwadai, Nerima City, Tokyo 179-0083", category: "food", sub_category: "ramen", hours_open: "11:30am to 3pm, 5:30pm to 10pm Monday, Wednesday to Sunday. Closed on Tuesdays", description: "Tasty ramen with a great variety of choices. Small and cozy restaurant.", picture_array_name: "NerimaMuseum", photo_type: "jpg")
+spot_creation(User.last, inoko_ramen_array, name: "Inoko Ramen", location: "179-0083 Tokyo, Nerima, Heiwadai, 2528", category: "food", sub_category: "ramen", hours_open: "11:30am to 3pm, 5:30pm to 10pm Monday, Wednesday to Sunday. Closed on Tuesdays", description: "Tasty ramen with a great variety of choices. Small and cozy restaurant.", picture_array_name: "NerimaMuseum", photo_type: "jpg")
 
 REVIEW_INFO = {
   rev_one: {
