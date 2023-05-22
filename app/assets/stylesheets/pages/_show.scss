@@ -7,6 +7,10 @@
   margin: 1rem 0;
 }
 
+.mapboxgl-canvas {
+  margin-top: 1.1rem;
+}
+
 .icons {
   display: flex;
   flex-direction: row;
@@ -19,10 +23,47 @@
   }
 }
 
+.star-icon {
+  flex-direction: column-reverse;
+}
+
+.bookmark-icon {
+  margin-top: 15px;
+}
+
+.add-remove-bookmark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 2rem;
+}
+
 .trytoggle {
   color: aquamarine;
 }
 
 .fa-solid {
   color: yellow;
+}
+
+
+.comments {
+  margin: 4rem auto;
+  background-color: mistyrose;
+
+  i {
+    font-size: 1.5rem;
+  }
+}
+
+.review-stars {
+  margin: 1rem auto;
+
+}
+
+.review-comment {
+
+  p {
+    margin: 1rem auto;
+  }
 }

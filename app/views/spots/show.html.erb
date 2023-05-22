@@ -34,23 +34,27 @@
     </div>
     <div class="icons-map">
       <div class="icons" data-controller = "icons">
-        <div class="d-flex">
+        <div class="d-flex star-icon">
           <% if @average_rating.nil?%>
             No Rating
           <% else %>
             <%= @average_rating %>/5
           <% end %>
-          <i class="fa-regular fa-star" id="star" ></i>
+          <i class="fa-solid fa-star" style="color: #ff6c0a;"></i>
         </div>
-        <% if @bookmark_present %>
-          <%= render 'bookmarks/delete', bookmark: @bookmark %>
-        <% else %>
-          <%= render 'bookmarks/new', spot: @spot, bookmark: @bookmark %>
-        <% end %>
+        <div class=".d-flex add-remove-bookmark">
+          <% if @bookmark_present %>
+            <%= render 'bookmarks/delete', bookmark: @bookmark %>
+            Remove from bookmarks
+          <% else %>
+            <%= render 'bookmarks/new', spot: @spot, bookmark: @bookmark %>
+            Add to bookmarks
+          <% end %>
+        </div>
         <%# <i class="fa-regular fa-bookmark" id="bookmark" create_form_target= "icon",
     action= "submit->icons#toggleclass"></i> %>
       </div>
-      <div style="width: 100%; height: 600px;"
+      <div style="width: 100%; height: 452px;"
   data-controller="map"data-controller="disable-button"
   data-map-markers-value="<%= @markers.to_json %>"
   data-map-api-key-value="<%= ENV['MAPBOX_URL'] %>"></div>
@@ -61,7 +65,7 @@
       <%= render 'shared/new_reviews' %>
     <% end %>
     <% if @reviews %>
-      <div data-insert-in-list-target="items">
+      <div data-insert-in-list-target="items" class="comments">
         <% @reviews.each do |review| %>
           <%= render 'spots/review', review: review %>
         <% end %>
