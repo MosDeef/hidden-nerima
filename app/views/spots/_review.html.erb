@@ -1,9 +1,9 @@
-<div class="d-flex flex-column mb-1">
-  <div class="d-flex">
+<div class="d-flex flex-column mb-1 review-comment ">
+  <div class="d-flex review-stars">
     <%review.rating.times do  %>
-      <i class="fa-solid fa-star" style="color: #fcff33;"></i>
+      <i class="fa-solid fa-star" style="color: #ff6c0a;"></i>
     <% end %>
   </div>
-  <p>Posted By: <%= review.user.full_name %> At <%= review.posted_time %> </p>
   <p><%= review.comment %></p>
+  <p>Posted By: <%= review.user.full_name %> At <%= review.posted_time %> </p>
 </div>
