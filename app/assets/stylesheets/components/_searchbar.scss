@@ -24,3 +24,13 @@
 .search-container button:hover {
   background: #ccc;
 }
+
+.search-options {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+
+  .input1 {
+    padding-left: 5px;
+  }
+}

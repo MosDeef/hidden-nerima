@@ -38,18 +38,47 @@
   margin-left: 2rem;
 }
 
-.trytoggle {
-  color: aquamarine;
-}
-
 .fa-solid {
   color: yellow;
 }
 
+.review-box {
+  margin-top: 4rem;
+
+  .btn {
+    background-color: #F7D4BC;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    margin-right: 1rem;
+    margin-left: 0.4rem;
+  }
+
+  .btn:hover {
+    background-color: mistyrose;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    border: 2px solid #F7D4BC;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    padding-top: 6px;
+    padding-bottom: 9px;
+    padding: 7px 11px 10px 11px;
+  }
+
+
+  a:hover {
+    background-color: mistyrose;
+    border: 2px solid white;
+  }
+}
 
 .comments {
   margin: 4rem auto;
   background-color: mistyrose;
+  border-radius: 4px;
 
   i {
     font-size: 1.5rem;
