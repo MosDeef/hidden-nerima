@@ -45,10 +45,10 @@
         <div class=".d-flex add-remove-bookmark">
           <% if @bookmark_present %>
             <%= render 'bookmarks/delete', bookmark: @bookmark %>
-            Remove from bookmarks
+            Remove bookmark
           <% else %>
             <%= render 'bookmarks/new', spot: @spot, bookmark: @bookmark %>
-            Add to bookmarks
+            Add bookmark
           <% end %>
         </div>
         <%# <i class="fa-regular fa-bookmark" id="bookmark" create_form_target= "icon",
