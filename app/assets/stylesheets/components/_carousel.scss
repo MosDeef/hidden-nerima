@@ -8,9 +8,6 @@
   overflow: hidden;
 }
 
-// .carousel-control-next {
-//   right: 18%;
-// }
 
 .carousel-indicators {
   position: absolute;
@@ -27,6 +24,25 @@
   margin-bottom: 1rem;
   /* margin-left: -18%; */
   list-style: none;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6%;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+  background: none;
+  border: 0;
+  opacity: 0.5;
+  transition: opacity 0.15s ease;
 }
 
 .photo-width {

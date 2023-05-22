@@ -11,11 +11,15 @@
     </button>
     <div class="search-container">
       <form action="/spots">
-        <div>
-          <input type="radio" id="food" name="category" value="food" />
-          <label for="food">Food</label>
-          <input type="radio" id="experience" name="category" value="experience" />
-          <label for="experience">Experience</label>
+        <div class="search-options">
+          <div class="input1">
+            <input type="radio" id="food" name="category" value="food" />
+            <label for="food">Food</label>
+          </div>
+          <div class="input2">
+            <input type="radio" id="experience" name="category" value="experience" />
+            <label for="experience">Experience</label>
+          </div>
         </div>
         <input class="search" type="text" placeholder="Search.." name="sub_category">
         <button type="submit"><i class="fa fa-search"></i></button>
